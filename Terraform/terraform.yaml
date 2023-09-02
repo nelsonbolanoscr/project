@@ -1,0 +1,16 @@
+---
+- name: Install software
+  hosts: localhost 
+  become: false 
+  tasks:
+    - name: Install HashiCorp tap
+      command: brew tap hashicorp/tap
+
+    - name: Install Terraform
+      command: brew install hashicorp/tap/terraform
+
+    - name: Update Terraform
+      command: brew update
+
+    - name: Upgrade Terraform
+      command: brew upgrade hashicorp/tap/terraform
